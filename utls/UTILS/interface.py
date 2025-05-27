@@ -1,6 +1,7 @@
 import utls.UTILS.estoque as e
 from utls.UTILS.estoque import Produto, Fornecedor, ler_texto, ler_inteiro, texto_num
 import os
+import time
 def limpa_tela():
     os.system('cls')
     return
@@ -10,14 +11,14 @@ def interface():
         while True:
             limpa_tela()
             print('Digite o menu que deseja acessar:')
-            numero = ler_inteiro('1 - Fornecedor \n2 - Categoria \n3 - Marca \n4 - Produto \n5 - Estoque\n',1,5)
+            numero = ler_inteiro('1 - Fornecedor \n2 - Categoria \n3 - Marca \n4 - Produto \n5 - Estoque \n6 - Sair\n',1,6)
             if numero == 1:
                 limpa_tela()
                 fornecedor = ler_inteiro('1- Adicionar Fornecedor \n2- Listar todos os produtos do fornecedor pelo id\n3- Atualizar contato do fornecedor\n', 1, 3)
                 if fornecedor == 1:
                     limpa_tela()
                     nome = ler_texto('Insira o nome do fornecedor: ', 1, 50).capitalize()
-                    cpf = ler_inteiro(f'Insira o CPF de {nome}', 11,11)
+                    cpf = ler_inteiro(f'Insira o CPF de {nome}: ', 11,11)
                     contato = ler_inteiro('insira o numero para contato com o fornecedor: ', 11,11)
                     fornecedor = Fornecedor(nome,contato,cpf)
                     fornecedor.adicionar()
@@ -126,3 +127,9 @@ def interface():
                     e.Estoque.mostrar_fornecedores()
                     input('\nPressione Enter para continuar...')
                     limpa_tela()
+            elif numero == 6:
+                limpa_tela()
+                print("Saindo...")
+                time.sleep(2)
+                limpa_tela()
+                break
