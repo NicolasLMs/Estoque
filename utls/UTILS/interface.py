@@ -130,6 +130,6 @@ def interface():
             elif numero == 6:
                 limpa_tela()
                 print("Saindo...")
-                time.sleep(2)
+                time.sleep(1)
                 limpa_tela()
                 break
