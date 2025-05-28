@@ -40,7 +40,7 @@ def interface():
             elif numero == 2:
                 limpa_tela()
 
-                categoria = ler_inteiro('1- Adicionar uma categoria \n2- Marcas por categoria\n', 1, 2)
+                categoria = ler_inteiro('1- Adicionar uma categoria \n2- Marcas por categoria\n3- Remover categoria\n', 1, 2)
                 if categoria == 1:
                     limpa_tela()
                     e.Categoria.adicionar()
@@ -49,6 +49,12 @@ def interface():
                 elif categoria == 2:
                     limpa_tela()
                     e.Categoria.marca_categoria()
+                    input('\nPressione Enter para continuar')
+                    limpa_tela()
+                
+                elif categoria == 3:
+                    limpa_tela()
+                    e.Categoria.remover()
                     input('\nPressione Enter para continuar')
                     limpa_tela()
 
@@ -116,7 +122,7 @@ def interface():
 
             elif numero == 5:
                 limpa_tela()
-                estoque = ler_inteiro('1- Listar estoque\n2- Listar fornecedores\n', 1, 2)
+                estoque = ler_inteiro('1- Listar estoque\n2- Listar fornecedores\n3- Listar Categorias\n', 1, 2)
                 if estoque == 1:
                     limpa_tela()
                     e.Estoque.listar_estoque()
@@ -127,9 +133,15 @@ def interface():
                     e.Estoque.mostrar_fornecedores()
                     input('\nPressione Enter para continuar...')
                     limpa_tela()
+                elif estoque == 3:
+                    limpa_tela()
+                    e.Estoque.listar_categorias()
+                    input('\nPressione Enter para continuar...')
+                    limpa_tela()
+
             elif numero == 6:
                 limpa_tela()
-                print("Saindo...")
-                time.sleep(1)
+                print("Encerrando o sistema...")
+                time.sleep(2)
                 limpa_tela()
                 break

@@ -210,6 +210,25 @@ class Categoria(Base):
             print(f'Categoria {nome} foi adicionada')
             return
         print(f'categoria {nome} já foi adicionada')
+    
+    @staticmethod
+    def remover():
+        Estoque.listar_categorias()
+        id_remover = ler_inteiro('Digite o ID da categoria que deseja remover: ', 1)
+        categoria_remover = session.query(Categoria).filter_by(id=id_remover).first()
+
+        if categoria_remover:
+            if categoria_remover.marcas:
+                print(f"Não é possível remover a categoria '{categoria_remover.nome}' pois existem marcas associadas a ela:")
+                for marca in categoria_remover.marcas:
+                    print(f"- {marca.nome}")
+                print("Remova as marcas primeiro para poder excluir a categoria.")
+            else:
+                session.delete(categoria_remover)
+                commit_session()
+                print(f"Categoria '{categoria_remover.nome}' removida com sucesso!")
+        else:
+            print(f"Nenhuma categoria com o ID '{id_remover}' encontrada.")
 
     @staticmethod
     def marca_categoria():
