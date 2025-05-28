@@ -40,7 +40,7 @@ def interface():
             elif numero == 2:
                 limpa_tela()
 
-                categoria = ler_inteiro('1- Adicionar uma categoria \n2- Marcas por categoria\n3- Remover categoria\n', 1, 2)
+                categoria = ler_inteiro('1- Adicionar uma categoria \n2- Marcas por categoria\n', 1, 2)
                 if categoria == 1:
                     limpa_tela()
                     e.Categoria.adicionar()
@@ -49,12 +49,6 @@ def interface():
                 elif categoria == 2:
                     limpa_tela()
                     e.Categoria.marca_categoria()
-                    input('\nPressione Enter para continuar')
-                    limpa_tela()
-                
-                elif categoria == 3:
-                    limpa_tela()
-                    e.Categoria.remover()
                     input('\nPressione Enter para continuar')
                     limpa_tela()
 
