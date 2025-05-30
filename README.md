@@ -1,3 +1,8 @@
+Yuri Gabriel Conceição Gonçalves
+Eric Miguel
+Henrique Santos
+Nicolas Lopes
+
 
 # 📦 Sistema de Gerenciamento de Estoque
 
